@@ -5,7 +5,7 @@
 Installing `Violet` is just a simple `pip install` away.
 
 ```shell
-$ pip install -U "git+https://github.com/m-rots/violet.git@main"
+pip install -U violet-simulator
 ```
 
 Please do note that `Violet` requires `Python` 3.9 or later.
@@ -45,7 +45,7 @@ class MyAgent(Agent):
 
 
 (
-    Simulation(Config(chunk_size=15))
+    Simulation(Config(radius=15))
     .batch_spawn_agents(
         500,
         MyAgent,  # 👈 use our own MyAgent class
@@ -66,4 +66,4 @@ If there is at least one agent nearby, we change our image to index `1` of the `
 However, if no one is around, we revert the image back to `white.png`.
 
 Last but not least we make sure to spawn our newly created `MyAgent` class inside the `batch_spawn_agents` function.
-In addition, we change the radius (the agent's visibility) from the default of 50 pixels to 15 pixels by modifying the `chunk_size` configuration value.
+In addition, we change the radius (the agent's visibility) from the default of 50 pixels to 15 pixels by modifying the `radius` configuration value.
