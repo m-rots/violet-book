@@ -38,7 +38,7 @@ from vi import Agent, Config, Simulation
 
 class MyAgent(Agent):
     def update(self):
-        if self.in_radius().count() > 0:
+        if self.in_proximity_accuracy().count() > 0:
             self.change_image(1)  # red
         else:
             self.change_image(0)  # white
